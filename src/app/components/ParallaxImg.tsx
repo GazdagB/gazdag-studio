@@ -1,0 +1,50 @@
+'use client'
+
+import React, { useRef } from 'react'
+import {motion, useMotionTemplate, useMotionValueEvent, useScroll, useTransform} from "framer-motion"; 
+
+interface PImgProps{
+    className?: string
+    src: string
+    alt: string 
+    end: number
+    start: number
+}
+
+const ParallaxImg = (
+    {
+        className,
+        src,
+        alt,
+        end,
+        start
+    } : PImgProps
+) => {
+
+    const ref = useRef(null)
+    const {scrollYProgress} = useScroll({
+        target: ref,
+        offset: [`${start}px end`, `end ${end * -1}px`]
+    })
+
+    const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0])
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
+    const y = useTransform(scrollYProgress, [0, 1], [start, end])
+
+    const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
+
+    return (
+        <motion.img
+            ref={ref}
+            src={src}
+            alt={alt}
+            style={{
+                opacity,
+                transform  // Use the transform template instead of scale directly
+            }}
+            className={className}
+        />
+    )
+}
+
+export default ParallaxImg
