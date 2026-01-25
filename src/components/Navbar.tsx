@@ -7,6 +7,7 @@ import { Fira_Code } from 'next/font/google'
 import Hamburger from 'hamburger-react'
 import { usePathname } from 'next/navigation'
 import { Palette, Code2, Sparkles, ShoppingBag } from 'lucide-react';
+import { motion } from 'framer-motion'
 
 const firaCode = Fira_Code({ 
   subsets: ['latin'],
@@ -23,10 +24,12 @@ const Navbar = () => {
 
     const isActive = (path: string) => pathname === path;
 
+  const menuItems = ['About', 'Services', 'Projects', 'Contact'];
+
   return (
     <>
     
-    <div className='py-5 px-10 fixed top-0 z-10 flex items-center justify-between max-w-[1200px] w-full'>
+    <div className='py-5 px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
         <Link href={"/"}>
             <Image src="/gs_logo_white.svg" alt="Logo" width={100} height={100}></Image>
         </Link>
@@ -54,6 +57,34 @@ const Navbar = () => {
         </div>
     </div>
 
+
+ <motion.div
+      initial={{ x: '100%' }}
+      animate={{ x: isOpen ? 0 : '100%' }}
+      transition={{ duration: 0.3 }}
+      className="overflow-hidden rounded-xl flex items-center justify-center h-screen bg-gray-600/50 md:w-[35%] backdrop-blur-lg fixed top-0 right-0 w-full z-10"
+    >
+      <ul className="flex gap-6 flex-col justify-center items-center w-full px-8">
+        {menuItems.map((item, index) => (
+          <motion.li
+            key={item}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: isOpen ? index * 0.08 + 0.15 : 0 }}
+            className="group relative"
+          >
+            <a
+              href={`#${item.toLowerCase()}`}
+              className="text-2xl font-light text-white transition-all duration-300 hover:translate-x-2 hover:font-normal relative inline-block py-2"
+            >
+              {/* Orange accent line */}
+              <span className="absolute -left-4 top-1/2 -translate-y-1/2 w-0 h-[2px] bg-orange-500 group-hover:w-3 transition-all duration-300" />
+              {item}
+            </a>
+          </motion.li>
+        ))}
+      </ul>
+    </motion.div>
 
 
 <div className='flex items-center justify-center md:hidden h-24 w-full fixed bottom-0 z-10 px-10 pb-4'>
