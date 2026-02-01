@@ -125,18 +125,18 @@ const ServiceCards = ({ sectionHeight }: ServiceCardsProps) => {
 
   const titleOpacity = useTransform(
     scrollY,
-    [sectionHeight + 100, sectionHeight + 800, sectionHeight + 4000],
+    [sectionHeight + 350, sectionHeight + 800, sectionHeight + 4000],
     [0, 1, 1]
   )
 
   const titleY = useTransform(
     scrollY,
-    [sectionHeight + 100, sectionHeight + 800],
+    [sectionHeight + 350, sectionHeight + 800],
     [100, 0]
   )
 
   return (
-    <div className="relative" style={{ height: '200vh' }}>
+    <div className="relative" style={{ height: '300vh' }}>
       {/* Container mindkettőnek - KÖZÉPEN */}
       <div className="sticky top-1/2 -translate-y-1/2 px-4">
         {/* Sticky szöveg */}
