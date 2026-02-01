@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import {motion, useMotionTemplate, useMotionValueEvent, useScroll, useTransform} from "framer-motion"; 
+import {motion, useMotionTemplate, useScroll, useTransform} from "framer-motion"; 
 
 interface PImgProps{
     className?: string
