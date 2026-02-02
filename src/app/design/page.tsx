@@ -1,7 +1,8 @@
-import Navbar from "@/components/Navbar"
-import CenterImage from "../../components/CenterImage";
+import Navbar from "@/components/common/Navbar"
+import CenterImage from "../../components/common/CenterImage";
 import { ReactLenis } from 'lenis/react'
-import ServiceCards from "../../components/ServiceCards";
+import ServiceCards from "../../components/common/ServiceCards";
+import { Projects5 } from "@/components/projects5";
 
 const HERO_SECTION_HEIGHT = 2500;
 const SERVICES_SECTION_HEIGHT = 2500;
@@ -25,8 +26,11 @@ const page = () => {
         <ServiceCards sectionHeight={SERVICES_SECTION_HEIGHT} />
         
         {/* Extra space alul */}
-        <div className="h-screen" />
+        <div className="h-50" />
+      <Projects5></Projects5>
       </div>
+
+
     </ReactLenis>
   )
 }
