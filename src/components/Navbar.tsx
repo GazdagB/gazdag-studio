@@ -7,7 +7,7 @@ import { Fira_Code } from 'next/font/google'
 import Hamburger from 'hamburger-react'
 import { usePathname } from 'next/navigation'
 import { Palette, Code2, Sparkles, ShoppingBag } from 'lucide-react';
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion'
 
 const firaCode = Fira_Code({ 
   subsets: ['latin'],
@@ -17,6 +17,23 @@ const firaCode = Fira_Code({
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false)
     const pathname = usePathname()
+
+    const { scrollY } = useScroll();
+
+    const borderOpacity = useTransform(
+        scrollY,
+        [3000, 3500],
+        [0, 1]
+    );
+
+   
+    const backgroundColor = useTransform(
+        scrollY,
+        [0, 3000, 2500],
+        ['rgba(0, 0, 0, 0)', 'rgba(75, 85, 99, 0)', 'rgba(9, 9, 11, 0.7)']
+    );
+    const blurValue = useTransform(scrollY, [3000, 3500], [0, 12]);
+    const backdropFilter = useMotionTemplate`blur(${blurValue}px)`;
 
     useEffect(() => {
         console.log("Current page:", pathname);
@@ -29,7 +46,13 @@ const Navbar = () => {
   return (
     <>
     
-    <div className='py-5 px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
+    <motion.div
+    style={{
+        backdropFilter,
+        border: useMotionTemplate`1px solid rgba(229, 231, 235, ${borderOpacity})`,
+        backgroundColor: backgroundColor,
+    }}
+    className='py-5 mt-4 rounded-lg px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
         <Link href={"/"}>
             <Image src="/gs_logo_white.svg" alt="Logo" width={100} height={100}></Image>
         </Link>
@@ -55,7 +78,7 @@ const Navbar = () => {
                 <Hamburger size={20} toggled={isOpen} toggle={setOpen} />
             </div>
         </div>
-    </div>
+    </motion.div>
 
 
  <motion.div
