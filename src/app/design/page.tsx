@@ -27,6 +27,9 @@ const page = () => {
         {/* Extra space alul */}
         <div className="h-screen" />
       </div>
+
+      
+
     </ReactLenis>
   )
 }
