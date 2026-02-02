@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar"
-import CenterImage from "../components/CenterImage";
+import CenterImage from "../../components/CenterImage";
 import { ReactLenis } from 'lenis/react'
 
 const SECTION_HEIGHT = 2500;

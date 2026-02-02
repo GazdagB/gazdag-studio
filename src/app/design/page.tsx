@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar"
-import CenterImage from "../components/CenterImage";
+import CenterImage from "../../components/CenterImage";
 import { ReactLenis } from 'lenis/react'
-import ServiceCards from "../components/ServiceCards";
+import ServiceCards from "../../components/ServiceCards";
 
 const HERO_SECTION_HEIGHT = 2500;
 const SERVICES_SECTION_HEIGHT = 2500;
