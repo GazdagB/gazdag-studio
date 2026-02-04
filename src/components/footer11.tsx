@@ -49,7 +49,7 @@ const Footer11 = ({
   className,
 }: Footer11Props) => {
   return (
-    <section className={cn("py-16 md:py-24 lg:py-32", className)}>
+    <section className={cn("py-16 md:py-24 lg:py-32 text-white max-w-[1200px] px-10", className)}>
       <div className="container">
         <div className="flex flex-col items-start justify-between gap-8 py-4 md:flex-row lg:py-8">
           {/* Logo */}
