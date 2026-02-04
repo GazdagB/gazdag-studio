@@ -1,0 +1,54 @@
+import React from "react";
+import ButtonSt from "./button-standard-3";
+import { cn } from "@/lib/utils";
+import {Download} from "lucide-react";
+interface About15Props {
+  className?: string;
+}
+
+const About15 = ({ className }: About15Props) => {
+  return (
+    <section
+      className={cn("dark bg-background py-32 text-foreground", className)}
+    >
+      <div className="container flex flex-col items-center justify-center gap-25 lg:flex-row lg:gap-[10vw]">
+        <div className="w-xs rotate-[-6deg] border bg-foreground p-1 text-background">
+          <img
+            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img14.png"
+            alt=""
+            className="pointer-events-none h-110 w-full object-cover"
+          />
+
+          <div className="pt-2 pb-1">
+            <p className="text-lg font-medium tracking-tight text-background">
+              John Doe
+            </p>
+            <p className="text-sm text-background/50">@shadcnblocks.com</p>
+          </div>
+        </div>
+        <div className="w-xs space-y-6">
+          <h1 className="mb-15 text-5xl font-medium tracking-tight">
+            Shaping ideas with clarity and{" "}
+            <span className="font-instrumentSerif">impact</span>
+          </h1>
+          <p className="text-sm lg:text-base">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+            voluptate saepe quas cum reprehenderit eligendi inventore animi
+            excepturi sapiente earum.
+          </p>
+          <p className="text-sm lg:text-base">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+            voluptate saepe quas cum reprehenderit eligendi inventore animi
+            excepturi sapiente earum.
+          </p>
+          <div className="flex gap-5">
+            <ButtonSt cursorP={true} title={"More about me"}></ButtonSt>
+            <ButtonSt icon={<Download/>} bgColor={"#0000"} cursorP={true} title={"Download Resume"}></ButtonSt>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About15 };

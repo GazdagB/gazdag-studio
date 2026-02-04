@@ -3,7 +3,7 @@ import CenterImage from "../../components/common/CenterImage";
 import { ReactLenis } from 'lenis/react'
 import ServiceCards from "../../components/common/ServiceCards";
 import { Projects5 } from "@/components/projects5";
-
+import { About15 } from "@/components/about15";
 const HERO_SECTION_HEIGHT = 2500;
 const SERVICES_SECTION_HEIGHT = 2500;
 
@@ -27,6 +27,7 @@ const page = () => {
         
         {/* Extra space alul */}
         <div className="h-50" />
+        <About15></About15>
       <Projects5></Projects5>
       </div>
 
