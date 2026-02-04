@@ -1,4 +1,3 @@
-import Navbar from "@/components/common/Navbar"
 import CenterImage from "../../components/common/CenterImage";
 import { ReactLenis } from 'lenis/react'
 import ServiceCards from "../../components/common/ServiceCards";
@@ -10,8 +9,7 @@ const SERVICES_SECTION_HEIGHT = 2500;
 const page = () => {
   return (
     <ReactLenis root options={{ lerp: 0.10 }}>
-      <div className="bg-zinc-950 flex flex-col items-center justify-center text-white">
-        <Navbar />
+      <div className="bg-zinc-950 flex flex-col items-center justify-center text-white w-full">
         
         {/* Hero Section */}
         <div 

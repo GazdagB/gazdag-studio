@@ -1,4 +1,3 @@
-import Navbar from "@/components/common/Navbar"
 import CenterImage from "../../components/common/CenterImage";
 import { ReactLenis } from 'lenis/react'
 
@@ -6,9 +5,7 @@ const SECTION_HEIGHT = 2500;
 
 const page = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-white">
-   
-     <Navbar></Navbar>
+    <div className="flex flex-col items-center justify-center text-white w-full">
     <div className="text-white flex items-center justify-center w-full">
        
 

@@ -52,7 +52,7 @@ const Navbar = () => {
         border: useMotionTemplate`1px solid rgba(229, 231, 235, ${borderOpacity})`,
         backgroundColor: backgroundColor,
     }}
-    className='py-5 mt-4 rounded-lg px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
+    className='py-5 mt-4 text-white rounded-lg px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
         <Link href={"/"}>
             <Image src="/gs_logo_white.svg" alt="Logo" width={100} height={100}></Image>
         </Link>
