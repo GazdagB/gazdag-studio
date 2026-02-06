@@ -3,6 +3,8 @@ import { ReactLenis } from 'lenis/react'
 import ServiceCards from "../../components/common/ServiceCards";
 import { Projects5 } from "@/components/projects5";
 import { About15 } from "@/components/about15";
+import { Contact2 } from "@/components/contact2";
+import { Blog21 } from "@/components/blog21";
 const HERO_SECTION_HEIGHT = 2500;
 const SERVICES_SECTION_HEIGHT = 2500;
 
@@ -27,6 +29,8 @@ const page = () => {
         <div className="h-50" />
         <About15></About15>
       <Projects5></Projects5>
+      <Contact2 className="max-w-[1200px] w-full flex items-center justify-center"></Contact2>
+      <Blog21></Blog21>
       </div>
 
 

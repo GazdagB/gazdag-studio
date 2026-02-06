@@ -58,7 +58,7 @@ const Projects5 = ({ className }: Projects5Props) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="container max-w-[1100px] px-10">
-        <h1 className="text-5xl text-white leading-tight font-bold uppercase">Featured Projects</h1>
+        <h1 className="text-5xl text-white leading-tight font-bold ">Featured Projects</h1>
         <p className={`${firaCode.className} text-muted-foreground`}>These are my most recent and favourite projects.</p>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
