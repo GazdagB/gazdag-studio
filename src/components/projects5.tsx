@@ -4,6 +4,7 @@ import { Fira_Code } from 'next/font/google'
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import Link from 'next/link';
 
 const firaCode = Fira_Code({ 
   subsets: ['latin'],
@@ -12,12 +13,14 @@ const firaCode = Fira_Code({
 
 const projects5prop = [
   {
+    id: 1,
     title: "Modern Concrete Pavilion",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/Modern Architectural Elegance at Twilight.png",
     year: "2025",
     type: "Architecture",
   },
   {
+    id: 2,
     title: "Colorful Urban Living",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/Modernist Architecture in Lush Forest.png",
 
@@ -25,24 +28,28 @@ const projects5prop = [
     type: "Urban Design",
   },
   {
+    id: 3,
     title: "Minimalist Home Retreat",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw12.jpeg",
     year: "2025",
     type: "Interior",
   },
   {
+    id: 4,
     title: "Urban Concrete House",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/Modern Minimalist House.png",
     year: "2025",
     type: "Product Design",
   },
   {
+    id: 5,
     title: "Luxury Concrete Box",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw14.jpeg",
     year: "2025",
     type: "Residential",
   },
   {
+    id: 6,
     title: "Glasshouse in Nature",
     img: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw16.jpeg",
     year: "2025",
@@ -63,6 +70,7 @@ const Projects5 = ({ className }: Projects5Props) => {
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects5prop.map((project, index) => (
+            <Link href={`/design/case/${project.id}`} key={project.id}>
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -88,6 +96,7 @@ const Projects5 = ({ className }: Projects5Props) => {
                 </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </div>
