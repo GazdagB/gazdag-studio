@@ -1,14 +1,15 @@
 import { cn } from "@/lib/utils";
+import { JSX } from "react";
 
 interface CaseStudy8Props {
   className?: string;
-  children?: React.ReactNode;
+  children?: JSX.Element | JSX.Element[];
   company?: {
     name: string;
   };
 }
 
-const CaseStudy8 = ({ className, children, company }: CaseStudy8Props) => {
+const CaseStudy8 = ({ className, children, company,  }: CaseStudy8Props) => {
   return (
     <section className={cn("py-32 px-6", className, company)}>
       <div className="container text-white flex flex-col gap-12 lg:flex-row lg:gap-24">
