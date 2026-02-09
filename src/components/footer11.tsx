@@ -1,4 +1,6 @@
+'use client'
 import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
@@ -48,6 +50,8 @@ const Footer11 = ({
   },
   className,
 }: Footer11Props) => {
+      const pathname = usePathname()
+      if(pathname === "/") return null;
   return (
     <section className={cn("py-16 md:py-24 lg:py-32 text-white max-w-[1200px] px-10", className)}>
       <div className="container">

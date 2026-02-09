@@ -20,39 +20,24 @@ const Navbar = () => {
 
     const { scrollY } = useScroll();
 
-    const borderOpacity = useTransform(
-        scrollY,
-        [3000, 3500],
-        [0, 1]
-    );
-
-   
-    const backgroundColor = useTransform(
-        scrollY,
-        [0, 3000, 2500],
-        ['rgba(0, 0, 0, 0)', 'rgba(75, 85, 99, 0)', 'rgba(9, 9, 11, 0.7)']
-    );
-    const blurValue = useTransform(scrollY, [3000, 3500], [0, 12]);
-    const backdropFilter = useMotionTemplate`blur(${blurValue}px)`;
-
     useEffect(() => {
         console.log("Current page:", pathname);
     }, [pathname]);
 
     const isActive = (path: string) => pathname === path;
+    
+    if(pathname === "/") return null;
 
   const menuItems = ['About', 'Services', 'Projects', 'Contact'];
 
   return (
     <>
-    
+
     <motion.div
     style={{
-        backdropFilter,
-        border: useMotionTemplate`1px solid rgba(229, 231, 235, ${borderOpacity})`,
-        backgroundColor: backgroundColor,
+     
     }}
-    className='py-5 mt-4 text-white rounded-lg px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
+    className='py-5 mt-4. bg-black/90 backdrop:blur-2xl mt-4  text-white rounded-lg px-10 fixed top-0 z-30 flex items-center justify-between max-w-[1200px] w-full'>
         <Link href={"/"}>
             <Image src="/gs_logo_white.svg" alt="Logo" width={100} height={100}></Image>
         </Link>
