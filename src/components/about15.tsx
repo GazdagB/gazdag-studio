@@ -12,18 +12,18 @@ const About15 = ({ className }: About15Props) => {
       className={cn("dark bg-background py-32 text-foreground", className)}
     >
       <div className="container flex flex-col items-center justify-center gap-25 lg:flex-row lg:gap-[10vw]">
-        <div className="w-xs rotate-[-6deg] border bg-foreground p-1 text-background">
+        <div className="text-white">
           <img
-            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img14.png"
+            src="/branding/gs_hero_image_blue_1.png"
             alt=""
             className="pointer-events-none h-110 w-full object-cover"
           />
 
           <div className="pt-2 pb-1">
-            <p className="text-lg font-medium tracking-tight text-background">
-              John Doe
+            <p className="text-lg font-medium tracking-tight text-white">
+              Gazdag Balázs
             </p>
-            <p className="text-sm text-background/50">@shadcnblocks.com</p>
+            <p className="text-sm text-white/50">@gazdag_b</p>
           </div>
         </div>
         <div className="w-xs space-y-6">

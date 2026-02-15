@@ -43,27 +43,27 @@ interface Footer11Props {
 }
 const Footer11 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
+    url: "https://www.gazdag.studio",
+    src: "/branding/logo_icon_white.svg",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "gazdag.studio",
   },
   className,
 }: Footer11Props) => {
       const pathname = usePathname()
       if(pathname === "/") return null;
   return (
-    <section className={cn("py-16 md:py-24 lg:py-32 text-white max-w-[1200px] px-10", className)}>
+    <section className={cn("py-16 pb-32 md:pb-0 md:py-24 lg:py-32 w-full max-w-[1200px] text-white max-w-[1200px] px-10", className)}>
       <div className="container">
         <div className="flex flex-col items-start justify-between gap-8 py-4 md:flex-row lg:py-8">
           {/* Logo */}
-          <div className="w-full md:w-auto">
+          <div className="w-full md:w-auto flex">
             <a href={logo.url} className="flex items-center gap-2">
               <img
                 src={logo.src}
                 alt={logo.alt}
                 title={logo.title}
-                className="h-8"
+                className="h-4 mt-1"
               />
               <h2 className="text-lg font-semibold">{logo.title}</h2>
             </a>
@@ -122,8 +122,8 @@ const Footer11 = ({
 
         <div className="mt-12 md:mt-16">
           <img
-            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/shadcnblocks-giant-text.png"
-            className="w-full"
+            src="/branding/gs_vertical.svg"
+            className="w-full opacity-70"
             alt="Shadcnblocks"
           />
         </div>
