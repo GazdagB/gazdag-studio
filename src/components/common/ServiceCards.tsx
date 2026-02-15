@@ -18,7 +18,7 @@ const services = [
         left: 0
       }
     },
-    description: "Egyedi arculatok, márka tervezés online megjelenés, logók készítése",
+    description: "We craft bespoke brand identities designed to elevate businesses and create lasting recognition.",
     icon: "✨"
   },
   {
@@ -33,7 +33,7 @@ const services = [
         left: -30
       }
     },
-    description: "Egyedi arculatok készítése vállalkozásoknak",
+    description: "Premium print design that brings your brand to life beyond the screen.",
     icon: "🖨️"
   },
   {
@@ -48,7 +48,7 @@ const services = [
         left: -30
       }
     },
-    description: "Egyedi arculatok készítése vállalkozásoknak",
+    description: "Websites where strategy, design, and user experience work together to grow your business.",
     icon: "💡"
   }
 ]
