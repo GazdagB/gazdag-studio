@@ -2,6 +2,7 @@ import React from "react";
 import ButtonSt from "./button-standard-3";
 import { cn } from "@/lib/utils";
 import {Download} from "lucide-react";
+import Image from "next/image";
 interface About15Props {
   className?: string;
 }
@@ -12,11 +13,13 @@ const About15 = ({ className }: About15Props) => {
       className={cn("dark bg-background py-32 text-foreground", className)}
     >
       <div className="container flex flex-col items-center justify-center gap-25 lg:flex-row lg:gap-[10vw]">
-        <div className="text-white">
-          <img
+        <div className="text-white px-20">
+          <Image
+          width={400}
+          height={400}
             src="/branding/gs_hero_image_blue_1.png"
             alt=""
-            className="pointer-events-none h-110 w-full object-cover"
+            className="pointer-events-none  object-contain"
           />
 
           <div className="pt-2 pb-1">
