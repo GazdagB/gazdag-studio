@@ -43,7 +43,7 @@ const About15 = ({ className }: About15Props) => {
         {/* Text Content */}
         <motion.div className="w-md space-y-6"
         initial='hidden'
-        viewport={{ once: false, amount: 1 }}
+        viewport={{ once: true, amount: 1 }}
         whileInView='visible'
         transition={{
           staggerChildren: 0.3,
