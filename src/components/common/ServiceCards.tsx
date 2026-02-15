@@ -1,18 +1,15 @@
 "use client"
 
 import React from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image"
+import { motion } from "framer-motion"
+import { Palette, Printer, Globe} from "lucide-react"
 
-interface ServiceCardsProps {
-  sectionHeight: number
-}
 
 const services = [
   {
     title: "BRANDING",
     image: {
-      src: "/branding.png",
+      icon: <Palette color="#2e72b3" size={50}  className="text-gray-900 mb-5"/>,
       width: 220,
       height: 200,
       alt: "Branding",
@@ -27,7 +24,7 @@ const services = [
   {
     title: "PRINT DESIGN",
     image: {
-      src: "/printer.png",
+      icon: <Printer className="text-gray-900 mb-5" color="#2e72b3" size={50}/>,
       width: 400,
       height: 300,
       alt: "Print Design",
@@ -42,7 +39,7 @@ const services = [
   {
     title: "WEB DESIGN - UI/UX",
     image: {
-      src: "/ui-ux.png",
+      icon: <Globe className="text-gray-900 mb-5" color="#2e72b3" size={50}/>,
       width: 370,
       height: 200,
       alt: "Web Design UI/UX",
@@ -59,94 +56,37 @@ const services = [
 const ServiceCard = ({ 
   service, 
   index, 
-  sectionHeight 
+ 
 }: { 
   service: typeof services[0], 
   index: number, 
-  sectionHeight: number 
 }) => {
-  const { scrollY } = useScroll()
-
-  const DELAY = 500
-
-  const cardX = useTransform(
-    scrollY,
-    [
-      sectionHeight + 800 + (index * DELAY),
-      sectionHeight + 1400 + (index * DELAY)
-    ],
-    [500, 0]
-  )
-
-  const cardOpacity = useTransform(
-    scrollY,
-    [
-      sectionHeight + 800 + (index * DELAY),
-      sectionHeight + 1400 + (index * DELAY)
-    ],
-    [0, 1]
-  )
-
   return (
     <motion.div
-      className="bg-white relative rounded-lg shadow-lg flex flex-col items-center text-center h-[230px] w-full"
-      style={{
-        x: cardX,
-        opacity: cardOpacity
-      }}
-    >
+      className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-[200px] w-[90%]">
       {/* Image Container*/}
-      <div className="relative w-full h-[110px] flex items-center justify-center ">
-        <Image 
-          src={service.image.src} 
-          width={service.image.width} 
-          height={service.image.height} 
-          alt={service.image.alt}
-          style={{
-            position: 'absolute',
-            top: `${service.image.position.top}px`,
-            left: `${service.image.position.left}px`,
-          }}
-          className="object-contain"
-        />
+      <div className=" w-full flex items-center justify-start ">
+        {service.image.icon }
       </div>
 
       {/* Text Container - down */}
-      <div className="p-6 w-full text-start">
-        <h3 className="text-lg text-zinc-800 font-bold mb-2 uppercase">{service.title}</h3>
+      <div className="w-full text-start">
+        <h3 className="text-lg text-zinc-800 font-bold uppercase">{service.title}</h3>
         <p className="text-zinc-500 text-sm leading-relaxed">{service.description}</p>
       </div>
     </motion.div>
   )
 }
 
-const ServiceCards = ({ sectionHeight }: ServiceCardsProps) => {
-  const { scrollY } = useScroll()
-
-  const titleOpacity = useTransform(
-    scrollY,
-    [sectionHeight + 350, sectionHeight + 800, sectionHeight + 4000],
-    [0, 1, 1]
-  )
-
-  const titleY = useTransform(
-    scrollY,
-    [sectionHeight + 350, sectionHeight + 800],
-    [100, 0]
-  )
+const ServiceCards = () => {
 
   return (
-    <div className="relative" style={{ height: '300vh' }}>
+    <div className="bg-zinc-950 mt-[80vh]" >
       {/* Container mindkettőnek - KÖZÉPEN */}
       <div className="sticky top-1/2 -translate-y-1/2 px-4">
         {/* Sticky szöveg */}
         <motion.div 
-          className="flex justify-center mb-12 md:mb-16"
-          style={{ 
-            opacity: titleOpacity,
-            y: titleY
-          }}
-        >
+          className="flex justify-center mb-12 md:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-4xl mb-15 font-bold text-center">
             WHAT CAN I <span className="text-blue-400">DESIGN</span> FOR YOU?
           </h2>
@@ -154,14 +94,12 @@ const ServiceCards = ({ sectionHeight }: ServiceCardsProps) => {
 
         {/* Service Cards Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="flex flex-col lg:flex-row gap-10 justify-center items-center">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index}
                 service={service}
-                index={index}
-                sectionHeight={sectionHeight}
-              />
+                index={index}/>
             ))}
           </div>
         </div>
