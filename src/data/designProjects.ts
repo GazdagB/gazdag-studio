@@ -6,7 +6,7 @@ export const designProjects : CaseProjects[] = [
   {
     id: 0,
     slug: "erkans-doner",
-    title: "Logo Desing for Erkan's Döner",
+    title: "Logo Design for Erkan's Döner",
     coverImg: "/projects/design/erkans/erkans_doner_horizontal.png",
     img: "/projects/design/erkans/erkans_doner_horizontal.png",
     year: "2025",
