@@ -25,7 +25,7 @@ const Projects5 = ({ className }: Projects5Props) => {
         <p className={`${firaCode.className} text-muted-foreground`}>These are my most recent and favourite projects.</p>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {designProjects.map((project, index) => (
+          {designProjects.slice(0, 6).map((project, index) => (
             <Link href={`/design/case/${project.slug}`} key={project.id}>
               {/* ^^^^^^ Itt slug-ot használunk az id helyett! */}
               <motion.div
